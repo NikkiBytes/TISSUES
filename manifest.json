@@ -7,8 +7,7 @@
     },
     "dumper": {
         "data_url": [ "https://download.jensenlab.org/human_tissue_textmining_full.tsv" ],
-        "uncompress": false,
-        "release": "version:get_release"
+        "uncompress": false
     },
     "uploader": {
         "parser": "parser:load_data",
