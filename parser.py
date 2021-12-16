@@ -1,5 +1,5 @@
 import biothings.utils.dataload as dl   
-from multiprocess import Pool, Manager
+from multiprocessing import Pool, Manager
 import requests, json
 import time, os
 from itertools import groupby
@@ -144,4 +144,6 @@ def load_data(data_folder):
     print("[INFO] example record: \n", json.dumps(res, indent=4))
     print("[INFO] PROCESS COMPLETE.")
 
-    return records;
+    return records
+
+
