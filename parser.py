@@ -67,7 +67,7 @@ def load_tm_hu_data(datalist, symbol_dict):
         - json_docs: list of records generated from input file
     """
     json_docs=[]
-    for row in datalist:
+    for row in datalist[:300]:
         row_dict={}
         row_dict['ensembl']=row[0]
         row_dict['symbol']=symbol_dict[row[1]]
@@ -132,19 +132,14 @@ def load_data(data_folder):
         }
         merged_doc = []
         for _doc in group:
-
-            #print(_doc)
-            #if key.startswith("BTO:"):
             res["_id"] = key
             res["TISSUES"]['tissue_id'] = key               
-            #else:
-                #print(key)
-                #continue
             _doc.pop("tissue_identifier")
             res["TISSUES"]["tissue_name"] = _doc.pop("tissue_name")
             merged_doc.append(_doc)
         res['TISSUES']['associatedWith'] = merged_doc
-    
+        records.append(res)
+        
     print("[INFO] Finished making records, total time: {:0.2f} seconds.".format(time.time()-orig_st))
     print("[INFO] example record: \n", json.dumps(res, indent=4))
     print("[INFO] PROCESS COMPLETE.")
