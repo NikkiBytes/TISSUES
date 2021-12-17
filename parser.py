@@ -149,5 +149,3 @@ def load_data(data_folder):
     print("[INFO] PROCESS COMPLETE.")
 
     return records
-
-load_data("file")
