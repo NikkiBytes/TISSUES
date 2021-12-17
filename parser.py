@@ -1,9 +1,10 @@
 import biothings.utils.dataload as dl   
-from multiprocessing import Pool, Manager
+from multiprocess import Pool, Manager
 import requests, json
 import time, os
 from itertools import groupby
 from operator import itemgetter
+
 
 # set up multiprocessing 
 manager=Manager()
@@ -101,8 +102,8 @@ def load_data(data_folder):
     orig_st=time.time()
     records=[]
     tm_path=os.path.join(data_folder,"human_tissue_textmining_full.tsv" )
-    #tm_path = "/Users/nacosta/Documents/data/human_tissue_textmining_full.tsv" # input file
-
+    tm_path = "/Users/nacosta/Documents/data/human_tissue_textmining_full.tsv" # input file
+    #assert tm_path
     # set up symbol dict
     # get the data tissue ids and convert them into their symbol and
     # load into a dictionary that can be referenced later on.
@@ -118,6 +119,9 @@ def load_data(data_folder):
     ts=time.time()
     p=Pool()
     p.map(symbol_search, tissue_ids)
+    #p.join()
+    p.close()
+
     print("[INFO] Processing in parallel time: {:0.02f} seconds.".format(time.time()-ts))
     print("[INFO] %s dictionary keys made. "%len(symbol_dict.keys()))
 
@@ -146,4 +150,4 @@ def load_data(data_folder):
 
     return records
 
-
+load_data("file")
