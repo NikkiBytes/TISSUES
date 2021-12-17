@@ -102,7 +102,7 @@ def load_data(data_folder):
     orig_st=time.time()
     records=[]
     tm_path=os.path.join(data_folder,"human_tissue_textmining_full.tsv" )
-    tm_path = "/Users/nacosta/Documents/data/human_tissue_textmining_full.tsv" # input file
+    #tm_path = "/Users/nacosta/Documents/data/human_tissue_textmining_full.tsv" # input file
     #assert tm_path
     # set up symbol dict
     # get the data tissue ids and convert them into their symbol and
