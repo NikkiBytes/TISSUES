@@ -68,7 +68,7 @@ def load_tm_hu_data(datalist, symbol_dict):
         - json_docs: list of records generated from input file
     """
     json_docs=[]
-    for row in datalist[:30]:
+    for row in datalist[:5]:
         row_dict={}
         row_dict['ensembl']=row[0]
         row_dict['symbol']=symbol_dict[row[1]]
