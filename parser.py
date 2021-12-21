@@ -72,11 +72,11 @@ def load_data(data_folder):
     records=[]
     print("[INFO] loading TISSUE data ....")
 
-    kn_files=glob.glob(os.path.join("/Users/nacosta/Documents/data", "*_tissue_knowledge_full.tsv"))
+    kn_files=glob.glob(os.path.join(data_folder, "*_tissue_knowledge_full.tsv"))
     print("[INFO] %s knowledge files loaded."%(len(kn_files)))#, kn_files))
-    tm_files=glob.glob(os.path.join("/Users/nacosta/Documents/data", "*_tissue_textmining_full.tsv"))
+    tm_files=glob.glob(os.path.join(data_folder, "*_tissue_textmining_full.tsv"))
     print("[INFO] %s text mining files loaded."%(len(tm_files)))#, tm_files))
-    ex_files=glob.glob(os.path.join("/Users/nacosta/Documents/data", "*_tissue_experiments_full.tsv"))
+    ex_files=glob.glob(os.path.join(data_folder, "*_tissue_experiments_full.tsv"))
     print("[INFO] %s experiments files loaded."%(len(ex_files)))#, ex_files))
     
     # extract data
