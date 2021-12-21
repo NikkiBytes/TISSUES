@@ -1,6 +1,5 @@
 {
     "version": "0.2",
-    "requires" : ["multiprocess", "requests"],
     "__metadata__": {
         "license_url": "https://creativecommons.org/licenses/by/3.0/",
         "licence": "CC BY 3.0",
@@ -10,13 +9,13 @@
         "data_url": [ "https://download.jensenlab.org/human_tissue_textmining_full.tsv",
                       "https://download.jensenlab.org/human_tissue_experiments_full.tsv",
                       "https://download.jensenlab.org/human_tissue_knowledge_full.tsv",
-                      "https://download.jensenlab.org/mouse_tissue_knowledge_full.tsv",
+                      "https://download.jensenlab.org/mouse_tissue_textmining_full.tsv",
                       "https://download.jensenlab.org/mouse_tissue_experiments_full.tsv",
                       "https://download.jensenlab.org/mouse_tissue_knowledge_full.tsv",
-                      "https://download.jensenlab.org/rat_tissue_knowledge_full.tsv",
+                      "https://download.jensenlab.org/rat_tissue_textmining_full.tsv",
                       "https://download.jensenlab.org/rat_tissue_experiments_full.tsv",
                       "https://download.jensenlab.org/rat_tissue_knowledge_full.tsv",
-                      "https://download.jensenlab.org/pig_tissue_knowledge_full.tsv",
+                      "https://download.jensenlab.org/pig_tissue_textmining_full.tsv",
                       "https://download.jensenlab.org/pig_tissue_experiments_full.tsv",
                       "https://download.jensenlab.org/pig_tissue_knowledge_full.tsv" ],
         "uncompress": false
