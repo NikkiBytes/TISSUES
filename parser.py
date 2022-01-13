@@ -4,11 +4,11 @@ import time, os
 from itertools import groupby
 from operator import itemgetter
 
-SYMBOL_RESOLVE_RESULT = {}
+#SYMBOL_RESOLVE_RESULT = {}
 
 def load_tm_data(datafiles):
     """
-        Load human tissue text mining data
+        Load tissue text mining data
         Input:
         - filepath: input tsv file
         returns:
@@ -105,7 +105,7 @@ def load_data(data_folder):
 
         records.append(res)
 
-    print("[INFO] Finished making records, total time: {:0.2f} seconds.".format(time.time()-orig_st))
-    print("[INFO] PROCESS COMPLETE, %s MADE. "%len(records))
-    print("[INFO] example record \n", json.dumps(records[-2:], indent=4))
+    print("[INFO] Process complete, total time: {:0.2f} seconds.".format(time.time()-orig_st))
+    print("[INFO] %s records made. "%len(records))
+    print("[INFO] Example records: \n", json.dumps(records[-2:], indent=4))
     return records
