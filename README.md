@@ -9,45 +9,30 @@ Input data is from [TISSUES Database](https://tissues.jensenlab.org/About).
 - **Association centric**  document.   
 - Can change the `_id` below to its symbolic representation. 
 
-## <u> Document Structure</u>  
+<details>
+<summary>Record Example</summary>
+## <u> Record </u>  
   
 ```  
-[
-    {
-        "_id": "BTO:0000000",
-        "TISSUES": {
-            "associatedWith": [
-                {
-                    "ensembl": "18S_rRNA",
-                    "symbol": "18S_rRNA",
-                    "zscore": 6.111,
-                    "confidence": 3.055,
-                    "category": "textmining"
-                }
-            ],
-            "tissue_id": "BTO:0000000",
-            "tissue_name": "tissues, cell types and enzyme sources"
-        }
+
+{
+    "_id": "CLDB:0007242_00000090",
+    "subject": {
+        "id": "CLDB:0007242",
+        "name": "COV-644"
     },
-    {
-        "_id": "BTO:0000042",
-        "TISSUES": {
-            "associatedWith": [
-                {
-                    "ensembl": "18S_rRNA",
-                    "symbol": "18S_rRNA",
-                    "zscore": 5.997,
-                    "confidence": 2.999,
-                    "category": "textmining"
-                }
-            ],
-            "tissue_id": "BTO:0000042",
-            "tissue_name": "BTO:0000042"
-        }
+    "association": {
+        "tissue_name": "COV-644",
+        "zscore": "2.239",
+        "confidence": "1.120",
+        "category": "textmining"
     },
-    .
-    .
-    .
-]
+    "object": {
+        "ensembl": "hsa-miR-892a",
+        "symbol": "hsa-miR-892a"
+    }
+}
 
 ```
+
+</details>
