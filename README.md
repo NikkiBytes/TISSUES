@@ -6,12 +6,11 @@ Input data is from [TISSUES Database](https://tissues.jensenlab.org/About).
   
   
   
-- **Association centric**  document.   
-- Can change the `_id` below to its symbolic representation. 
+- **Association centric**  document    
+- The parser only imports human datafiles (_other species files are available_)
 
 <details>
-<summary>Record Example</summary>
-## <u> Record </u>  
+<summary>Example Record</summary>
   
 ```  
 

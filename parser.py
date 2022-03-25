@@ -1,24 +1,29 @@
+"""
+TISSUES Data Parser 
+For biothings.pending.api 
+Original Version Written by: Nichollette A.
+"""
+
+# import our packages
 import biothings.utils.dataload as dl   
-import  json, glob
-import time, os
+import glob
+import os
 from itertools import groupby
 from operator import itemgetter
-
+#import json # import when testing
 
 def load_tm_data(datafiles):
     """
-        Load human tissue text mining data
-        Input:
+    Load text mining data -- note we only add human data
+    input:
         - filepath: input tsv file
-        returns:
+    returns:
         - json_docs: list of records generated from input file
     """
 
     json_docs = []
-
     for file in datafiles:
         datalist=dl.tab2list(file, (0,1,2,3,4,5,6)) # load into biothings
-
         for row in datalist:
             row_dict={}
             row_dict['ensembl']=row[0]
@@ -33,13 +38,13 @@ def load_tm_data(datafiles):
     return json_docs
 
 
-
 def load_ep_kn_data(datafiles, category):
-    """ load data from the experiments or knowledge file
-    note: the experiments file and the knowledge file share the same column names
-    Keyword arguments:
-    file_path -- the file path of the experiments or knowledge file
-    category -- the category of the file, should be either experiments or knowledge
+    """ 
+    Load data from the experiments or knowledge file
+    Note - the experiments file and the knowledge file share the same column names
+    input:
+        - datafiles: data 
+        - category: the category of the file, should be either experiments or knowledge
     """
 
     json_docs = []
@@ -63,11 +68,11 @@ def load_ep_kn_data(datafiles, category):
     return json_docs
 
 def load_data(data_folder):
-   # Main data load function
-   # Keyword arguments:
-   # data_folder -- folder storing downloaded files
-    orig_st=time.time()
-    records=[]
+    """
+    Main data load function
+    input:
+        - data_folder: folder storing downloaded files
+    """
 
     print("\n[INFO] Loading TISSUE data ....")
 
@@ -115,7 +120,3 @@ def load_data(data_folder):
                 else:
                     res["association"][mod_key]= merged_doc[0][mod_key]
             yield res
-            
-#iterator=load_data('/Users/nacosta/Documents/data')
-#*_, last = iterator 
-#print(json.dumps(last,indent=4))
