@@ -76,7 +76,6 @@ def load_data(data_folder):
 
     print("\n[INFO] Loading TISSUE data ....")
 
-    data_folder="/Users/nacosta/Documents/data/"
     kn_files=glob.glob(os.path.join(data_folder, "*human*_tissue_knowledge_full.tsv"))
     #print("[INFO] %s knowledge files found."%(len(kn_files)))#, kn_files))
     tm_files=glob.glob(os.path.join(data_folder, "*human*_tissue_textmining_full.tsv"))
