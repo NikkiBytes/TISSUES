@@ -1,13 +1,9 @@
- # TISSUES Data Plugin for Biothings  
+ # TISSUES Data Plugin for `pending.biothings.io`  
   
-Input data is from [TISSUES Database](https://tissues.jensenlab.org/About).  
-  
-## Notes  
-  
-  
+Data plugin for the [TISSUES Database](https://tissues.jensenlab.org/About).  
   
 - **Association centric**  document    
-- The parser only imports human datafiles (_other species files are available_)
+- The parser only imports human datafiles --_other species files are available_
 
 <details>
 <summary>Example Record</summary>

@@ -27,14 +27,13 @@ def load_tm_data(datafiles):
         for row in datalist:
             row_dict={}
             row_dict['ensembl']=row[0]
-            row_dict['symbol']=row[1]#symbol_dict[row[1]]
+            row_dict['symbol']=row[1]
             row_dict['tissue_identifier']=row[2]
             row_dict['tissue_name']=row[3]
             row_dict['zscore'] = row[4]
             row_dict['confidence'] = row[5]
             row_dict['category'] = 'textmining'
             json_docs.append(row_dict)
-            #print("[INFO] row dict: ", json.dumps(row_dict, indent=4))
     return json_docs
 
 
@@ -60,11 +59,10 @@ def load_ep_kn_data(datafiles, category):
                 "tissue_name": row[3],
                 "source": row[4], 
                 "expression": row[5],
-                "confidence": float(row[6]),
+                "confidence": row[6],
                 "category": category
             }
             json_docs.append(row_dict)
-            #print(json.dumps(row_dict, indent=4))
     return json_docs
 
 def load_data(data_folder):
@@ -85,8 +83,7 @@ def load_data(data_folder):
 
     json_docs=load_tm_data(tm_files) + load_ep_kn_data(ex_files,  "experiments")+load_ep_kn_data(kn_files, "knowledge")
     sorted_doc=sorted(json_docs, key=itemgetter('tissue_identifier'))
-    len(sorted_doc), len(json_docs)
-    docs=sorted_doc#[100:110]
+    docs=sorted_doc
     iterator=groupby(docs, key=itemgetter("tissue_identifier"))
 
     for key, group in iterator:
@@ -105,7 +102,6 @@ def load_data(data_folder):
 
             orig_key=key
             mod_key=orig_key+f"_{i:08d}" # modify key
-            #print(mod_key)
 
             res["_id"] = mod_key
             res["subject"]['id'] = orig_key               
